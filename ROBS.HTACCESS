@@ -1,0 +1,6 @@
+# Block all bots by denying access based on common bot headers
+RewriteEngine On
+
+# Deny access to requests with any User-Agent header (typically used by bots)
+RewriteCond %{HTTP_USER_AGENT} .+ [NC]
+RewriteRule ^ - [F,L]
